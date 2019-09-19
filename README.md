@@ -21,13 +21,16 @@ hilbert 3d, variation 0, iteration 1-4
 ![Image](images/peano2d_var0.png)  
 peano 2d, variation 0, iteration 1, 8 possibilities
 
-![Image](images/peano2d_1_3.png)  
+![Image](images/peano2d_1_3r.png)  
 peano 2d, variation 0, iteration 1-3
 
 ## **Peano 3D**
 
 ![Image](images/peano3d_var0.png)  
 peano 3d, variation 0, iteration 1, 48 possibilities
+
+![Image](images/peano3d_1_3r.png)  
+peano 3d, variation 0, iteration 1-3
 
 ## **Remarks**
 some larger images in image/large
