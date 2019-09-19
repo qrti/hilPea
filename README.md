@@ -22,11 +22,11 @@ def hilbert2d(s, x, y, a, b):
     hilbert2d(s, x+s*a.x,       y+s*a.y,       -b, -a)
 ```
 
-\- s is the iteration variable it has to start as a power of 2 and is halved in every subroutine call, if it reaches the 1 the current coordinates are drawn and the recursion stops  
-\- the coefficients after x and y are the blueprint of the curve, every tile consists of 4 points, in this example the +a+b possibility is used, see table above  
+\- s is the iteration variable, it has to start as a power of 2 and is halved with every subroutine call, if it reaches 1 the current points and edges are drawn and the recursion stops  
+\- the coefficients after x and y parameters are the blueprint of the curve, every tile consists of 4 points, in this example the +a+b possibility is used as blueprint, see table above  
 \- a and b parameters after x and y fields vary the blueprint for the next iteration, start point (marked) and end points must fit together, see table above  
 \- a and b parameters correlate to x and y tile point positions  
-\- cor method calls correct the positions of the tiles in case they have negative offsets, as it is a 2D curve z coordinates are discarded
+\- cor method calls correct the position of the tiles in case they have negative offsets, as it is a 2D curve z coordinates are discarded
 
 ![Image](images/hilbert2d_1_4r.png)  
 hilbert 2d, variation 0, iteration 1-3
@@ -154,6 +154,8 @@ def peano3d(s, x, y, z, a, b, c):
 peano 3d, variation 0, iteration 1-3
 
 ## **Remarks**
+\- only one possible variation for hilbert and peano 2D and 3D curves is completed here  
+\- the source contains commented out drawing routines to array other possible variations  
 \- the clean edges routine gets rid of construction points on edges, in some cases they might be useful and the routine has to be commented out  
 \- some larger images in image/large
 
