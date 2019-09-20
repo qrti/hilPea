@@ -3,7 +3,7 @@
 ## **Hilbert 2D**
 
 ![Image](images/hilbert2d_var0.png)  
-hilbert 2d, variation 0, iteration 1, 8 possibilities
+hilbert 2d, variation 0, iteration 1, 8 tiles
 
 ```
 def hilbert2d(s, x, y, a, b):
@@ -23,10 +23,10 @@ def hilbert2d(s, x, y, a, b):
 ```
 
 \- s is the iteration variable, it has to start as a power of 2 and is halved with every subroutine call, if it reaches 1 the current points and edges are drawn and the recursion stops  
-\- the coefficients after x and y parameters are the blueprint of the curve, every tile consists of 4 points, in this example the +a+b possibility is used as blueprint, see table above  
-\- a and b parameters after x and y fields vary the blueprint for the next iteration, start point (marked) and end points must fit together, see table above  
+\- the coefficients after x and y parameters are the blueprint of the curve, every 2D hilbert tile consists of 4 points, here the +a+b tile is used as blueprint, see table above  
+\- a and b parameters after x and y fields vary the blueprint for the next iteration, start (marked) and end points must fit together, see table above  
 \- a and b parameters correlate to x and y tile point positions  
-\- cor method calls correct the position of the tiles in case they have negative offsets, as it is a 2D curve z coordinates are discarded
+\- the cor method corrects the position of the tiles in case they have negative offsets, as it is a 2D curve z coordinates are discarded
 
 ![Image](images/hilbert2d_1_4r.png)  
 hilbert 2d, variation 0, iteration 1-3
@@ -34,7 +34,7 @@ hilbert 2d, variation 0, iteration 1-3
 ## **Hilbert 3D**
 
 ![Image](images/hilbert3d_var0.png)  
-hilbert 3d, variation 0, iteration 1, 48 possibilities
+hilbert 3d, variation 0, iteration 1, 48 tiles
 
 ```
 def hilbert3d(s, x, y, z, a, b, c):
@@ -58,9 +58,9 @@ def hilbert3d(s, x, y, z, a, b, c):
     hilbert3d(s, x+s*c.x,           y+s*c.y,           z+s*c.z,            b, -c, -a)
 ```
 
-\- the blueprint is a little longer because every tile consists of 8 points but same principle as before  
+\- the blueprint is a little longer now, because every hilbert 3D tile consists of 8 points but same principle as before  
 \- to a and b parameters a c parameter for z coordinates is added  
-\- in cor method calls the optional correction factor is omitted because it is 1 for 1 x 1 x 1 spatial expanse of 3D hilbert tiles
+\- in cor calls the optional correction factor f is omitted because its default value 1 fits for 1 x 1 x 1 spatial expanse of 3D hilbert tiles
 
 ![Image](images/hilbert3d_1_4r.png)  
 hilbert 3d, variation 0, iteration 1-4
@@ -68,7 +68,7 @@ hilbert 3d, variation 0, iteration 1-4
 ## **Peano 2D**
 
 ![Image](images/peano2d_var0.png)  
-peano 2d, variation 0, iteration 1, 8 possibilities
+peano 2d, variation 0, iteration 1, 8 tiles
 
 ```
 def peano2d(s, x, y, a, b):
@@ -92,9 +92,9 @@ def peano2d(s, x, y, a, b):
     peano2d(s, x+s*2*(a.x+b.x), y+s*2*(a.y+b.y),  a,  b)
 ```
 
-\- the blueprint has 9 points now  
+\- the blueprint has 9 points for peano 2D curves  
 \- iteration variable s has to start with powers of 3 for peano curves, it is divided by 3 in every iteration  
-\- the correction factor is set to 2 because the 2D peano curve tiles occupy a 2 x 2 field
+\- the correction factor is set to 2 because 2D peano curve tiles occupy a 2 x 2 field
 
 ![Image](images/peano2d_1_3r.png)  
 peano 2d, variation 0, iteration 1-3
@@ -102,7 +102,7 @@ peano 2d, variation 0, iteration 1-3
 ## **Peano 3D**
 
 ![Image](images/peano3d_var0.png)  
-peano 3d, variation 0, iteration 1, 48 possibilities
+peano 3d, variation 0, iteration 1, 48 tiles
 
 ```
 def peano3d(s, x, y, z, a, b, c):
@@ -154,9 +154,9 @@ def peano3d(s, x, y, z, a, b, c):
 peano 3d, variation 0, iteration 1-3
 
 ## **Remarks**
-\- only one possible variation for hilbert and peano 2D and 3D curves is completed here  
-\- the source contains commented out drawing routines to array other possible variations  
-\- the clean edges routine gets rid of construction points on edges, in some cases they might be useful and the routine has to be commented out  
+\- only one variation of several others for hilbert and peano 2D and 3D curves is completed here  
+\- the source contains commented out drawing routines to array other variations  
+\- the clean edges routine gets rid of construction points on edges, in some cases they might be useful and the routine call has to be commented out  
 \- some larger images in image/large
 
 ## **Versions**
