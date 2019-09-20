@@ -29,7 +29,7 @@ def hilbert2d(s, x, y, a, b):
 \- the cor method corrects the position of the tiles in case they have negative offsets, as it is a 2D curve z coordinates are discarded
 
 ![Image](images/hilbert2d_1_4r.png)  
-hilbert 2d, variation 0, iteration 1-3
+hilbert 2d, variation 0, iteration 1-4
 
 ## **Hilbert 3D**
 
